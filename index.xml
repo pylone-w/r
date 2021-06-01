@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Pylone&#39;s R documents site</title>
+    <link>/</link>
+    <description>Recent content in Home on Pylone&#39;s R documents site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to custom your website</title>
+      <link>/post/2021/06/01/how-to-custom-your-website/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2021/06/01/how-to-custom-your-website/</guid>
+      <description>config.toml For this example site, I defined permalinks for two sections, post and note, so that the links to pages under these directories will contain the date info, e.g., https://xmin.yihui.org/post/2016/02/14/a-plain-markdown-post/. This is optional, and it is up to your personal taste of URLs.
+[permalinks] post = &amp;quot;/post/:year/:month/:day/:slug/&amp;quot; note = &amp;quot;/note/:year/:month/:day/:slug/&amp;quot; You can define the menu through menu.main, e.g.,
+[[menu.main]] name = &amp;quot;Home&amp;quot; url = &amp;quot;/&amp;quot; weight = 1 [[menu.main]] name = &amp;quot;About&amp;quot; url = &amp;quot;/about/&amp;quot; weight = 2 [[menu.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/2020/12/01/hello-r-markdown/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2020/12/01/hello-r-markdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>A Plain Markdown Post</title>
+      <link>/post/2016/02/14/a-plain-markdown-post/</link>
+      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/02/14/a-plain-markdown-post/</guid>
+      <description>This sample post is mainly for blogdown users. If you do not use blogdown, you can skip the first section.
+1. Markdown or R Markdown This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
+ You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.</description>
+    </item>
+    
+    <item>
+      <title>Intitial built idea of this website</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Motivation I have been strongly influencing by Yihui’s blog this two years . Or rather say, was continuous motivated, simulated by such high quantity and quality output of this person, comparing to the ordinary people like me, who did not have any output or works for entire decade. Deep anxious came to me suddenly when I realized this such huge difference of life quality between the two groups, and the strong desire to complete beautiful masterpiece inside of my mind was also inspired.</description>
+    </item>
+    
+  </channel>
+</rss>

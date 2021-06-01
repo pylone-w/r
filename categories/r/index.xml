@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Pylone&#39;s R documents site</title>
+    <link>/categories/r/</link>
+    <description>Recent content in R on Pylone&#39;s R documents site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to custom your website</title>
+      <link>/post/2021/06/01/how-to-custom-your-website/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2021/06/01/how-to-custom-your-website/</guid>
+      <description>config.toml For this example site, I defined permalinks for two sections, post and note, so that the links to pages under these directories will contain the date info, e.g., https://xmin.yihui.org/post/2016/02/14/a-plain-markdown-post/. This is optional, and it is up to your personal taste of URLs.
+[permalinks] post = &amp;quot;/post/:year/:month/:day/:slug/&amp;quot; note = &amp;quot;/note/:year/:month/:day/:slug/&amp;quot; You can define the menu through menu.main, e.g.,
+[[menu.main]] name = &amp;quot;Home&amp;quot; url = &amp;quot;/&amp;quot; weight = 1 [[menu.main]] name = &amp;quot;About&amp;quot; url = &amp;quot;/about/&amp;quot; weight = 2 [[menu.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/2020/12/01/hello-r-markdown/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2020/12/01/hello-r-markdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+  </channel>
+</rss>
