@@ -2,84 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Pylone&#39;s R documents site</title>
-    <link>/tags/</link>
+    <link>https://pylone-w.github.io/r/tags/</link>
     <description>Recent content in Tags on Pylone&#39;s R documents site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pylone-w.github.io/r/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>plot</title>
-      <link>/tags/plot/</link>
+      <link>https://pylone-w.github.io/r/tags/plot/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>/tags/plot/</guid>
+      <guid>https://pylone-w.github.io/r/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
+      <link>https://pylone-w.github.io/r/tags/r-markdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>/tags/r-markdown/</guid>
+      <guid>https://pylone-w.github.io/r/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>/tags/regression/</link>
+      <link>https://pylone-w.github.io/r/tags/regression/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>/tags/regression/</guid>
+      <guid>https://pylone-w.github.io/r/tags/regression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blogdown</title>
-      <link>/tags/blogdown/</link>
+      <link>https://pylone-w.github.io/r/tags/blogdown/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/blogdown/</guid>
+      <guid>https://pylone-w.github.io/r/tags/blogdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>/tags/markdown/</link>
+      <link>https://pylone-w.github.io/r/tags/markdown/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/markdown/</guid>
+      <guid>https://pylone-w.github.io/r/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MathJax</title>
-      <link>/tags/mathjax/</link>
+      <link>https://pylone-w.github.io/r/tags/mathjax/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/mathjax/</guid>
+      <guid>https://pylone-w.github.io/r/tags/mathjax/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pandoc</title>
-      <link>/tags/pandoc/</link>
+      <link>https://pylone-w.github.io/r/tags/pandoc/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/pandoc/</guid>
+      <guid>https://pylone-w.github.io/r/tags/pandoc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RStudio</title>
-      <link>/tags/rstudio/</link>
+      <link>https://pylone-w.github.io/r/tags/rstudio/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/rstudio/</guid>
+      <guid>https://pylone-w.github.io/r/tags/rstudio/</guid>
       <description></description>
     </item>
     
