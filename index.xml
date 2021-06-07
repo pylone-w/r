@@ -6,10 +6,19 @@
     <description>Recent content in Home on Pylone&#39;s R documents site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://pylone-w.github.io/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>One example of ploting Alluviam</title>
+      <link>https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/</link>
+      <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/</guid>
+      <description>1.data input and pre-process 1.1Inputing the original data from local path library(readxl) library(dplyr) data &amp;lt;- read_excel(&amp;quot;/Users/profits/Rdata/website/content/plot/2021-06-06-one-example-of-ploting-alluviam/data.xlsx&amp;quot;)  1.2checking the data structure head(data) ## # A tibble: 6 x 16 ## sample soil_type location season longitude latitude pH ORP DO T ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 127 R west rain 100°13′7… 25°37′5… 8.35 82 2.50 14.4 ## 2 57 R west dry 100°8′48… 25°46′2… 7.</description>
+    </item>
     
     <item>
       <title>How to custom your website</title>
@@ -60,7 +69,7 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>https://pylone-w.github.io/r/about/</guid>
-      <description>Motivation I have been strongly influencing by Yihui’s blog this two years . Or rather say, was continuous motivated, simulated by such high quantity and quality output of this person, comparing to the ordinary people like me, who did not have any output or works for entire decade. Deep anxious came to me suddenly when I realized this such huge difference of life quality between the two groups, and the strong desire to complete beautiful masterpiece inside of my mind was also inspired.</description>
+      <description>Motivation I have been strongly influencing by Yihui’s blog this two years . Or rather say, specifically, was continuous motivated, simulated by such high quantity and quality output of this person, comparing to the ordinary people like me, who did not have any output or works for entire decade. Deep anxious came to me suddenly when I realized this such huge difference of life quality between the two groups, and the strong desire to complete beautiful masterpiece inside of my mind was also inspired.</description>
     </item>
     
   </channel>

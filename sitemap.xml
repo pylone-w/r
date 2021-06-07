@@ -3,13 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://pylone-w.github.io/r/tags/alluviam/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pylone-w.github.io/r/categories/alluviam/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pylone-w.github.io/r/categories/</loc>
-    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://pylone-w.github.io/r/</loc>
-    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pylone-w.github.io/r/categories/methods/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pylone-w.github.io/r/tags/plot/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pylone-w.github.io/r/plot/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pylone-w.github.io/r/tags/</loc>
+    <lastmod>2021-06-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -48,22 +83,12 @@
   </url>
   
   <url>
-    <loc>https://pylone-w.github.io/r/tags/plot/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://pylone-w.github.io/r/tags/r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://pylone-w.github.io/r/tags/regression/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pylone-w.github.io/r/tags/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url>
   

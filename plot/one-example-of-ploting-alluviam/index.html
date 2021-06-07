@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One example of ploting Alluviam | Pylone&#39;s R documents site</title>
+    <link rel="stylesheet" href="/r/css/style.css" />
+    <link rel="stylesheet" href="/r/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/r/">Home</a></li>
+      
+      <li><a href="/r/about/">About</a></li>
+      
+      <li><a href="/r/categories/">Categories</a></li>
+      
+      <li><a href="/r/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">One example of ploting Alluviam</span></h1>
+<h2 class="author">Pylone</h2>
+<h2 class="date">2021/06/06</h2>
+</div>
+
+<main>
+
+
+
+<div id="data-input-and-pre-process" class="section level1">
+<h1>1.data input and pre-process</h1>
+<div id="inputing-the-original-data-from-local-path" class="section level2">
+<h2>1.1Inputing the original data from local path</h2>
+<pre class="r"><code>library(readxl)
+library(dplyr)
+data &lt;- read_excel(&quot;/Users/profits/Rdata/website/content/plot/2021-06-06-one-example-of-ploting-alluviam/data.xlsx&quot;)</code></pre>
+</div>
+<div id="checking-the-data-structure" class="section level2">
+<h2>1.2checking the data structure</h2>
+<pre class="r"><code>head(data)</code></pre>
+<pre><code>## # A tibble: 6 x 16
+##   sample soil_type location season longitude latitude    pH   ORP    DO     T
+##    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1    127 R         west     rain   100°13′7… 25°37′5…  8.35  82   2.50   14.4
+## 2     57 R         west     dry    100°8′48… 25°46′2…  7.95  45.5 1.67   17.8
+## 3    223 R         west     rain   100°6′22… 25°56′4…  7.68  41   1.70   17.8
+## 4    323 R         west     dry    100°8′39… 25°47′4…  7.31 210.  1.31   16.6
+## 5    226 F         west     rain   100°7′9″E 25°56′4…  7.98  60   1.39   17.1
+## 6     51 R         west     dry    100°9′47… 25°43′5…  7.48  18.2 0.947  18.9
+## # … with 6 more variables: SGT &lt;dbl&gt;, EC &lt;dbl&gt;, NH4 &lt;dbl&gt;, NO3 &lt;dbl&gt;,
+## #   NO2 &lt;dbl&gt;, TN &lt;dbl&gt;</code></pre>
+</div>
+<div id="converting-the-original-data-to-required" class="section level2">
+<h2>1.3converting the original data to required</h2>
+<p>Ploting alluviam require frequency data for each variable, so we need to convert continuous variables to discrete, and then calculate each frequency.</p>
+<div id="converting-the-continuous-variables-to-discrete" class="section level3">
+<h3>1.3.1converting the continuous variables to discrete</h3>
+<p>In this example, we cut off sample of each variables into two parts “L1” and “L2”, each of them have equivalent samples.</p>
+<pre class="r"><code>#EC
+  data$EC2[data$EC&lt;0.57]&lt;-&quot;L1&quot;
+  data$EC2[data$EC&gt;=0.57]&lt;-&quot;L2&quot;
+
+    
+#DO
+  data$DO2[data$DO&lt;1.33]&lt;-&quot;L1&quot;
+  data$DO2[data$DO&gt;=1.33]&lt;-&quot;L2&quot;
+
+   
+#ORP
+  data$ORP2[data$ORP&lt;76]&lt;-&quot;L1&quot;
+  data$ORP2[data$ORP&gt;=76]&lt;-&quot;L2&quot; 
+  
+#NO3
+  data$NO3_N[data$NO3&lt;4.76]&lt;-&quot;L1&quot;
+  data$NO3_N[data$NO3&gt;=4.76]&lt;-&quot;L2&quot;
+  
+#NH4
+  data$NH4_N[data$NH4&lt;0.138]&lt;-&quot;L1&quot;
+  data$NH4_N[data$NH4&gt;=0.138]&lt;-&quot;L2&quot;
+  
+#TN
+  data$TN_N[data$TN&lt;7.9]&lt;-&quot;L1&quot;
+  data$TN_N[data$TN&gt;=7.9]&lt;-&quot;L2&quot;</code></pre>
+</div>
+<div id="calculating-the-frequency" class="section level3">
+<h3>1.3.2calculating the frequency</h3>
+<p>We calculate the frequency by using package “dplyr”. In this example, we create a new data which contain a new added column named freq.</p>
+<pre class="r"><code>library(dplyr)  
+data_freq_NO3&lt;-data%&gt;%group_by(soil_type,season,EC2,DO2,ORP2,NO3_N) %&gt;% summarise(n=n())%&gt;%mutate(freq = n)
+data_freq_NH4&lt;-data%&gt;%group_by(soil_type,season,EC2,DO2,ORP2,NH4_N) %&gt;% summarise(n=n())%&gt;%mutate(freq = n)
+data_freq_TN&lt;-data%&gt;%group_by(soil_type,season,EC2,DO2,ORP2,TN_N) %&gt;% summarise(n=n())%&gt;%mutate(freq = n)</code></pre>
+</div>
+</div>
+</div>
+<div id="plotting" class="section level1">
+<h1>2.Plotting</h1>
+<p>We plot alluviam by using package “ggalluvial”.</p>
+<div id="no3" class="section level2">
+<h2>2.1NO3</h2>
+<pre class="r"><code>library(ggalluvial)
+ggplot(as.data.frame(data_freq_NO3),
+       aes(y = freq, axis1 = soil_type, axis2 = season, axis3= ORP2, axis4=DO2, axis5=EC2, axis6=NO3_N)) +
+  geom_alluvium(aes(fill = NO3_N), width = 1/12) +
+  geom_stratum(width = 1/12, fill = &quot;white&quot;, color = &quot;grey&quot;) +
+  geom_label(stat = &quot;stratum&quot;, aes(label = after_stat(stratum))) +
+   scale_x_continuous(breaks = 1:6, labels = c(&quot;soil_type&quot;, &quot;season&quot;,&quot;ORP2&quot;,&quot;DO2&quot;,&quot;EC2&quot;,&quot;NO3_N&quot;))+
+  scale_fill_brewer(type = &quot;qual&quot;, palette = &quot;Set1&quot;) +
+  ggtitle(&quot;NO3&quot;)</code></pre>
+<p><img src="https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>ggsave( file = &quot;NO3.pdf&quot;, width = 12, height =8 , dpi = 600)</code></pre>
+</div>
+<div id="nh4" class="section level2">
+<h2>2.2NH4</h2>
+<pre class="r"><code>(ggplot(as.data.frame(data_freq_NH4),
+       aes(y = freq, axis1 = soil_type, axis2 = season, axis3= EC2, axis4=ORP2, axis5=DO2, axis6=NH4_N)) +
+  geom_alluvium(aes(fill = NH4_N), width = 1/12) +
+  geom_stratum(width = 1/12, fill = &quot;white&quot;, color = &quot;grey&quot;) +
+  geom_label(stat = &quot;stratum&quot;, aes(label = after_stat(stratum))) +
+   scale_x_continuous(breaks = 1:6, labels = c(&quot;soil_type&quot;, &quot;season&quot;,&quot;EC2&quot;,&quot;ORP2&quot;,&quot;DO2&quot;,&quot;NH4_N&quot;))+
+  scale_fill_brewer(type = &quot;qual&quot;, palette = &quot;Set1&quot;) +
+  ggtitle(&quot;NH4&quot;))</code></pre>
+<p><img src="https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>ggsave( file = &quot;NH4.pdf&quot;, width = 12, height =8 , dpi = 600)</code></pre>
+</div>
+<div id="tn" class="section level2">
+<h2>2.3TN</h2>
+<pre class="r"><code>ggplot(as.data.frame(data_freq_TN),
+       aes(y = freq, axis1 = soil_type, axis2 = season, axis3= ORP2, axis4=DO2, axis5=EC2, axis6=TN_N)) +
+  geom_alluvium(aes(fill = TN_N), width = 1/12) +
+  geom_stratum(width = 1/12, fill = &quot;white&quot;, color = &quot;grey&quot;) +
+  geom_label(stat = &quot;stratum&quot;, aes(label = after_stat(stratum))) +
+   scale_x_continuous(breaks = 1:6, labels = c(&quot;soil_type&quot;, &quot;season&quot;,&quot;ORP2&quot;,&quot;DO2&quot;,&quot;EC2&quot;,&quot;TN_N&quot;))+
+  scale_fill_brewer(type = &quot;qual&quot;, palette = &quot;Set1&quot;) +
+  ggtitle(&quot;TN&quot;)</code></pre>
+<p><img src="https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>ggsave( file = &quot;TN.pdf&quot;, width = 12, height =8 , dpi = 600)</code></pre>
+</div>
+</div>
+<div id="picture-grouping" class="section level1">
+<h1>3.Picture grouping</h1>
+<p>We group the three pictures into one and make some modification by using illustrator. Here is the final output.</p>
+<div class="figure">
+<img src="images/plot%20alluviam.png" alt="Alluviam" />
+<p class="caption">Alluviam</p>
+</div>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://bookdown.org/yihui/blogdown/">Blogdown</a> | <a href="https://wang@pylone.org">Email</a> | <a href="https://github.com/pylone-w">Github</a>
+  
+  </footer>
+  </body>
+</html>
+
