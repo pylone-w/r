@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Pylone&#39;s R documents site</title>
-    <link>https://pylone-w.github.io/r/categories/</link>
+    <link>https://pylone-w.github.io/categories/</link>
     <description>Recent content in Categories on Pylone&#39;s R documents site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://pylone-w.github.io/r/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pylone-w.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Alluviam</title>
-      <link>https://pylone-w.github.io/r/categories/alluviam/</link>
+      <link>https://pylone-w.github.io/categories/alluviam/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pylone-w.github.io/r/categories/alluviam/</guid>
+      <guid>https://pylone-w.github.io/categories/alluviam/</guid>
       <description></description>
     </item>
     
     <item>
       <title>methods</title>
-      <link>https://pylone-w.github.io/r/categories/methods/</link>
+      <link>https://pylone-w.github.io/categories/methods/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pylone-w.github.io/r/categories/methods/</guid>
+      <guid>https://pylone-w.github.io/categories/methods/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://pylone-w.github.io/r/categories/r/</link>
+      <link>https://pylone-w.github.io/categories/r/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pylone-w.github.io/r/categories/r/</guid>
+      <guid>https://pylone-w.github.io/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>thinks</title>
-      <link>https://pylone-w.github.io/r/categories/thinks/</link>
+      <link>https://pylone-w.github.io/categories/thinks/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pylone-w.github.io/r/categories/thinks/</guid>
+      <guid>https://pylone-w.github.io/categories/thinks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Example</title>
-      <link>https://pylone-w.github.io/r/categories/example/</link>
+      <link>https://pylone-w.github.io/categories/example/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://pylone-w.github.io/r/categories/example/</guid>
+      <guid>https://pylone-w.github.io/categories/example/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://pylone-w.github.io/r/categories/hugo/</link>
+      <link>https://pylone-w.github.io/categories/hugo/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://pylone-w.github.io/r/categories/hugo/</guid>
+      <guid>https://pylone-w.github.io/categories/hugo/</guid>
       <description></description>
     </item>
     

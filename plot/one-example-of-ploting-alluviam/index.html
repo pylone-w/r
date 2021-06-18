@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>One example of ploting Alluviam | Pylone&#39;s R documents site</title>
-    <link rel="stylesheet" href="/r/css/style.css" />
-    <link rel="stylesheet" href="/r/css/fonts.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
   </head>
 
@@ -13,13 +13,13 @@
     <nav>
     <ul class="menu">
       
-      <li><a href="/r/">Home</a></li>
+      <li><a href="/">Home</a></li>
       
-      <li><a href="/r/about/">About</a></li>
+      <li><a href="/about/">About</a></li>
       
-      <li><a href="/r/categories/">Categories</a></li>
+      <li><a href="/categories/">Categories</a></li>
       
-      <li><a href="/r/tags/">Tags</a></li>
+      <li><a href="/tags/">Tags</a></li>
       
     </ul>
     <hr/>
@@ -114,7 +114,7 @@ ggplot(as.data.frame(data_freq_NO3),
    scale_x_continuous(breaks = 1:6, labels = c(&quot;soil_type&quot;, &quot;season&quot;,&quot;ORP2&quot;,&quot;DO2&quot;,&quot;EC2&quot;,&quot;NO3_N&quot;))+
   scale_fill_brewer(type = &quot;qual&quot;, palette = &quot;Set1&quot;) +
   ggtitle(&quot;NO3&quot;)</code></pre>
-<p><img src="https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="https://pylone-w.github.io/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre class="r"><code>ggsave( file = &quot;NO3.pdf&quot;, width = 12, height =8 , dpi = 600)</code></pre>
 </div>
 <div id="nh4" class="section level2">
@@ -127,7 +127,7 @@ ggplot(as.data.frame(data_freq_NO3),
    scale_x_continuous(breaks = 1:6, labels = c(&quot;soil_type&quot;, &quot;season&quot;,&quot;EC2&quot;,&quot;ORP2&quot;,&quot;DO2&quot;,&quot;NH4_N&quot;))+
   scale_fill_brewer(type = &quot;qual&quot;, palette = &quot;Set1&quot;) +
   ggtitle(&quot;NH4&quot;))</code></pre>
-<p><img src="https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="https://pylone-w.github.io/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <pre class="r"><code>ggsave( file = &quot;NH4.pdf&quot;, width = 12, height =8 , dpi = 600)</code></pre>
 </div>
 <div id="tn" class="section level2">
@@ -140,7 +140,7 @@ ggplot(as.data.frame(data_freq_NO3),
    scale_x_continuous(breaks = 1:6, labels = c(&quot;soil_type&quot;, &quot;season&quot;,&quot;ORP2&quot;,&quot;DO2&quot;,&quot;EC2&quot;,&quot;TN_N&quot;))+
   scale_fill_brewer(type = &quot;qual&quot;, palette = &quot;Set1&quot;) +
   ggtitle(&quot;TN&quot;)</code></pre>
-<p><img src="https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="https://pylone-w.github.io/plot/one-example-of-ploting-alluviam/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre class="r"><code>ggsave( file = &quot;TN.pdf&quot;, width = 12, height =8 , dpi = 600)</code></pre>
 </div>
 </div>

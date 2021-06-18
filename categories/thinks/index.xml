@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>thinks on Pylone&#39;s R documents site</title>
-    <link>https://pylone-w.github.io/r/categories/thinks/</link>
+    <link>https://pylone-w.github.io/categories/thinks/</link>
     <description>Recent content in thinks on Pylone&#39;s R documents site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://pylone-w.github.io/r/categories/thinks/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pylone-w.github.io/categories/thinks/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Output but not Input make sense</title>
-      <link>https://pylone-w.github.io/r/thoughts/output-but-not-input-make-sense/</link>
+      <link>https://pylone-w.github.io/thoughts/output-but-not-input-make-sense/</link>
       <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pylone-w.github.io/r/thoughts/output-but-not-input-make-sense/</guid>
+      <guid>https://pylone-w.github.io/thoughts/output-but-not-input-make-sense/</guid>
       <description>I would like to explain the meaning of life from the view of output.
 If a person, at the end of his or her life, has no left notes, or has not embodied memorable deeds in the form of a work, I am afraid that the meaning of his or her existence only make sense when considering he or she as a animal as one of the chain of human reproduction.</description>
     </item>

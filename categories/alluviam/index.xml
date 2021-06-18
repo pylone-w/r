@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alluviam on Pylone&#39;s R documents site</title>
-    <link>https://pylone-w.github.io/r/categories/alluviam/</link>
+    <link>https://pylone-w.github.io/categories/alluviam/</link>
     <description>Recent content in Alluviam on Pylone&#39;s R documents site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Jun 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://pylone-w.github.io/r/categories/alluviam/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pylone-w.github.io/categories/alluviam/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>One example of ploting Alluviam</title>
-      <link>https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/</link>
+      <link>https://pylone-w.github.io/plot/one-example-of-ploting-alluviam/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://pylone-w.github.io/r/plot/one-example-of-ploting-alluviam/</guid>
+      <guid>https://pylone-w.github.io/plot/one-example-of-ploting-alluviam/</guid>
       <description>1.data input and pre-process 1.1Inputing the original data from local path library(readxl) library(dplyr) data &amp;lt;- read_excel(&amp;quot;/Users/profits/Rdata/website/content/plot/2021-06-06-one-example-of-ploting-alluviam/data.xlsx&amp;quot;)  1.2checking the data structure head(data) ## # A tibble: 6 x 16 ## sample soil_type location season longitude latitude pH ORP DO T ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 127 R west rain 100°13′7… 25°37′5… 8.35 82 2.50 14.4 ## 2 57 R west dry 100°8′48… 25°46′2… 7.</description>
     </item>
     
