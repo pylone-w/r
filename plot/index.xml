@@ -20,5 +20,15 @@
       <description>1.data input and pre-process 1.1Inputing the original data from local path library(readxl) library(dplyr) data &amp;lt;- read_excel(&amp;quot;/Users/profits/Rdata/website/content/plot/2021-06-06-one-example-of-ploting-alluviam/data.xlsx&amp;quot;)  1.2checking the data structure head(data) ## # A tibble: 6 x 16 ## sample soil_type location season longitude latitude pH ORP DO T ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 127 R west rain 100°13′7… 25°37′5… 8.35 82 2.50 14.4 ## 2 57 R west dry 100°8′48… 25°46′2… 7.</description>
     </item>
     
+    <item>
+      <title>Alluviam plot by ggalluvial-example 2</title>
+      <link>https://pylone-w.github.io/plot/alluviam-plot-by-ggalluvial-example-2/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://pylone-w.github.io/plot/alluviam-plot-by-ggalluvial-example-2/</guid>
+      <description>Let’s begin with a simple question:what is alluviam? Maybe you could find the answer in Creating Alluvial Diagrams and Alluvial Plots in ggplot2. Here you go, start your practice right now!
+And then the further question appears: when should I use it in my paper? From my limited experience, it would be a perfect solution if you want to illustrator your data by a flow-dynamic picture. Simplly, you could see it as a ribbon-connected stacked bar plots which located in parallel along a axis of variable.</description>
+    </item>
+    
   </channel>
 </rss>

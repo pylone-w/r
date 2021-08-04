@@ -62,6 +62,16 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     </item>
     
     <item>
+      <title>Alluviam plot by ggalluvial-example 2</title>
+      <link>https://pylone-w.github.io/plot/alluviam-plot-by-ggalluvial-example-2/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://pylone-w.github.io/plot/alluviam-plot-by-ggalluvial-example-2/</guid>
+      <description>Let’s begin with a simple question:what is alluviam? Maybe you could find the answer in Creating Alluvial Diagrams and Alluvial Plots in ggplot2. Here you go, start your practice right now!
+And then the further question appears: when should I use it in my paper? From my limited experience, it would be a perfect solution if you want to illustrator your data by a flow-dynamic picture. Simplly, you could see it as a ribbon-connected stacked bar plots which located in parallel along a axis of variable.</description>
+    </item>
+    
+    <item>
       <title>A Plain Markdown Post</title>
       <link>https://pylone-w.github.io/post/2016/02/14/a-plain-markdown-post/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>

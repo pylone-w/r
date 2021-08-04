@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alluviam plot by ggalluvial-example 2 | Pylone&#39;s R documents site</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Alluviam plot by ggalluvial-example 2</span></h1>
+<h2 class="author">Pylone</h2>
+<h2 class="date">2020/02/01</h2>
+</div>
+
+<main>
+
+
+
+<p>Let’s begin with a simple question:what is alluviam? Maybe you could find the answer in <a href="https://cran.r-project.org/web/packages/alluvial/vignettes/alluvial.html">Creating Alluvial Diagrams</a> and <a href="http://corybrunson.github.io/ggalluvial/articles/ggalluvial.html">Alluvial Plots in ggplot2</a>. Here you go, start your practice right now!</p>
+<p>And then the further question appears: when should I use it in my paper? From my limited experience, it would be a perfect solution if you want to illustrator your data by a flow-dynamic picture. Simplly, you could see it as a ribbon-connected <strong>stacked bar plots</strong> which located in parallel along a axis of variable.</p>
+<div id="read-data" class="section level1">
+<h1>1.Read data</h1>
+<p>The point of ploting Alluviam lies in rebuilding your data structure, that is, you need to calculate the frequency of each variable by ID(sample) before you plot it.</p>
+<pre class="r"><code>library(readxl)
+Module_fungi1&lt;-read_excel(&quot;Module.liudong.xlsx&quot;, sheet = &quot;Sheet5&quot;)
+Module_fungi1</code></pre>
+<pre><code>## # A tibble: 132 x 5
+##    Trt   Module Microbe          Freq    ID
+##    &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;
+##  1 BS         0 Others              3     1
+##  2 BS         0 Pezizomycetes       7     2
+##  3 BS         0 Sordariomycetes    15     3
+##  4 BS         1 Others              4     4
+##  5 BS         1 Pezizomycetes       1     5
+##  6 BS         1 Sordariomycetes    16     6
+##  7 BS         2 Others              8     7
+##  8 BS         2 Pezizomycetes       1     8
+##  9 BS         2 Sordariomycetes     8     9
+## 10 BS         3 Others              3    10
+## # … with 122 more rows</code></pre>
+<pre class="r"><code>#In this example, column &quot;ID&quot; is the saample ID, you could regard each ID as one stream, these stream will go through stratum &quot;Trt&quot;. Each Stream has its own identity, shich&#39;s clour is defined by variable Microbe, size defined by Freq.</code></pre>
+</div>
+<div id="data-process" class="section level1">
+<h1>2.Data process</h1>
+<pre class="r"><code>Module_fungi1$Module&lt;-as.factor(Module_fungi1$Module)
+#Transfer type of colunmn Module from numerical to factor.
+
+Module_fungi1$Trt = factor(Module_fungi1$Trt, levels=c(&#39;BS&#39;,&#39;SP&#39;,&#39;P&#39;,&#39;G&#39;))
+Module_fungi1$Microbe = factor(Module_fungi1$Microbe,levels=c(&#39;Pezizomycetes&#39;,&#39;Sordariomycetes&#39;,&#39;Others&#39;))
+#Reorder the levels of Trt abd Microbe as you wish.
+
+str(Module_fungi1)</code></pre>
+<pre><code>## tibble [132 × 5] (S3: tbl_df/tbl/data.frame)
+##  $ Trt    : Factor w/ 4 levels &quot;BS&quot;,&quot;SP&quot;,&quot;P&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Module : Factor w/ 11 levels &quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,..: 1 1 1 2 2 2 3 3 3 4 ...
+##  $ Microbe: Factor w/ 3 levels &quot;Pezizomycetes&quot;,..: 3 1 2 3 1 2 3 1 2 3 ...
+##  $ Freq   : num [1:132] 3 7 15 4 1 16 8 1 8 3 ...
+##  $ ID     : num [1:132] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+</div>
+<div id="plot-alluvium" class="section level1">
+<h1>2.plot alluvium</h1>
+<div id="alluvium1" class="section level2">
+<h2>2.1 alluvium1</h2>
+<pre class="r"><code>library(ggplot2)
+library(ggalluvial)
+ggplot(Module_fungi1,
+       aes(x = Trt, stratum = Module, alluvium = ID, #Module as stratum
+           y = Freq,
+           fill = Microbe, label = Microbe)) +
+  scale_x_discrete(expand = c(.05, .1)) +
+  scale_fill_brewer(type = &quot;qual&quot;, palette =     &quot;Set3&quot;,limits=c(&#39;Pezizomycetes&#39;,&#39;Sordariomycetes&#39;,&#39;Others&#39;)) +
+  geom_flow() +
+  geom_stratum(alpha = .5) +
+  theme(legend.position = &quot;bottom&quot;) +
+  ggsave( file = &quot;Figure_Fungi_1.pdf&quot;, width = 8, height = 6, dpi = 600)</code></pre>
+<p><img src="https://pylone-w.github.io/plot/alluviam-plot-by-ggalluvial-example-2/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="alluvium2" class="section level2">
+<h2>2.2 alluvium2</h2>
+<pre class="r"><code>ggplot(Module_fungi1,
+       aes(x = Trt, stratum = Microbe, alluvium = ID, #Microbe as stratum
+           y = Freq,
+           fill = Microbe, label = Microbe)) +
+  scale_x_discrete(expand = c(.05, .1)) +
+  scale_fill_brewer(type = &quot;qual&quot;, palette =     &quot;Set3&quot;,limits=c(&#39;Pezizomycetes&#39;,&#39;Sordariomycetes&#39;,&#39;Others&#39;)) +
+  geom_flow() +
+  geom_stratum(alpha = .5) +
+  theme(legend.position = &quot;bottom&quot;) +
+  ggsave( file = &quot;Figure_Fungi_3.pdf&quot;, width = 8, height = 6, dpi = 600)</code></pre>
+<p><img src="https://pylone-w.github.io/plot/alluviam-plot-by-ggalluvial-example-2/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="alluvium3" class="section level2">
+<h2>2.3 alluvium3</h2>
+<pre class="r"><code>Module_fungi1_1&lt;-read_excel(&quot;Module.liudong.xlsx&quot;, sheet = &quot;Sheet6&quot;)
+Module_fungi1_1$Module&lt;-as.factor(Module_fungi1_1$Module)
+Module_fungi1_1$Trt = factor(Module_fungi1_1$Trt, levels=c(&#39;BS&#39;,&#39;SP&#39;,&#39;P&#39;,&#39;G&#39;))
+Module_fungi1_1$Microbe = factor(Module_fungi1_1$Microbe,levels=c(&quot;Blank&quot;,&#39;Pezizomycetes&#39;,&#39;Sordariomycetes&#39;,&#39;Others&#39;))
+ggplot(Module_fungi1_1,
+       aes(x = Trt, stratum = Module, alluvium = ID,
+           y = Freq,
+           fill = Microbe, label = Microbe)) +
+  scale_x_discrete(expand = c(.05, .1)) +
+  scale_fill_brewer(type = &quot;qual&quot;, palette = &quot;Set3&quot;,limits=c(&#39;Pezizomycetes&#39;,&#39;Sordariomycetes&#39;,&#39;Others&#39;)) +
+  geom_flow() +
+  geom_stratum(alpha = .5) +
+  theme(legend.position = &quot;bottom&quot;) +
+  ggsave( file = &quot;Figure_Fungi_2.pdf&quot;, width = 8, height = 6, dpi = 600)</code></pre>
+<p><img src="https://pylone-w.github.io/plot/alluviam-plot-by-ggalluvial-example-2/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+</div>
+<div id="final-output-processed-by-adobe-illustrator" class="section level1">
+<h1>3.Final output processed by adobe illustrator</h1>
+<p><img src="images/FIGURE_FUNGI.png" /></p>
+</div>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  © <a href="https://bookdown.org/yihui/blogdown/">Blogdown</a> | <a href="https://wang@pylone.org">Email</a> | <a href="https://github.com/pylone-w">Github</a>
+  
+  </footer>
+  </body>
+</html>
+
