@@ -129,6 +129,10 @@
 <h3>Q3:遇到问题怎么办？</h3>
 <p>（1）先从教程（查询手册）中找答案，再去百度、谷歌（推荐），再交流、总结、分享</p>
 <p>（2）真想学好还是建议翻墙，巨量优质的教程分享</p>
+<div class="figure">
+<img src="images/ggplot1.png" alt="速查表" />
+<p class="caption">速查表</p>
+</div>
 <p><br/></p>
 <hr />
 <p><br/></p>
@@ -211,7 +215,132 @@
 </div>
 <div id="workflow" class="section level2">
 <h2>6.Workflow</h2>
-<p><img src="images/R.png" /></p>
+<p>一切围绕《R语言实战》查询</p>
+<div class="figure">
+<img src="images/R_practice.png" alt="R语言实战" />
+<p class="caption">R语言实战</p>
+</div>
+<div id="软件安装" class="section level3">
+<h3>6.1 软件安装</h3>
+<div class="figure">
+<img src="images/step1.png" alt="1" />
+<p class="caption">1</p>
+</div>
+</div>
+<div id="新建项目" class="section level3">
+<h3>6.1 新建项目</h3>
+<div class="figure">
+<img src="images/step2.png" alt="2" />
+<p class="caption">2</p>
+</div>
+</div>
+<div id="使用rmarkdown" class="section level3">
+<h3>6.2 使用RMarkdown</h3>
+<div class="figure">
+<img src="images/step3.png" alt="3" />
+<p class="caption">3</p>
+</div>
+</div>
+<div id="数据处理" class="section level3">
+<h3>6.3 数据处理</h3>
+<div id="导入数据" class="section level4">
+<h4>6.3.1 导入数据</h4>
+<pre class="r"><code>#install.packages(&quot;readxl&quot;)
+library(readxl)
+cardata &lt;- read_excel(&quot;/Users/profits/Rdata/website/cardata.xlsx&quot;)
+head(cardata)</code></pre>
+<pre><code>## # A tibble: 6 x 12
+##   Cartype        mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+##   &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Mazda RX4     21       6   160   110  3.9   2.62  16.5     0     1     4     4
+## 2 Mazda RX4 W…  21       6   160   110  3.9   2.88  17.0     0     1     4     4
+## 3 Datsun 710    22.8     4   108    93  3.85  2.32  18.6     1     1     4     1
+## 4 Hornet 4 Dr…  21.4     6   258   110  3.08  3.22  19.4     1     0     3     1
+## 5 Hornet Spor…  18.7     8   360   175  3.15  3.44  17.0     0     0     3     2
+## 6 Valiant       18.1     6   225   105  2.76  3.46  20.2     1     0     3     1</code></pre>
+</div>
+<div id="筛选数据" class="section level4">
+<h4>6.3.3 筛选数据</h4>
+<p>筛选disp高于120，VS=1的数据</p>
+<pre class="r"><code>library(dplyr)
+cardata_filter&lt;-cardata%&gt;%filter(disp&gt;120,vs==1)
+cardata_filter</code></pre>
+<pre><code>## # A tibble: 8 x 12
+##   Cartype        mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+##   &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Hornet 4 Dr…  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1
+## 2 Valiant       18.1     6  225    105  2.76  3.46  20.2     1     0     3     1
+## 3 Merc 240D     24.4     4  147.    62  3.69  3.19  20       1     0     4     2
+## 4 Merc 230      22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2
+## 5 Merc 280      19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4
+## 6 Merc 280C     17.8     6  168.   123  3.92  3.44  18.9     1     0     4     4
+## 7 Toyota Coro…  21.5     4  120.    97  3.7   2.46  20.0     1     0     3     1
+## 8 Volvo 142E    21.4     4  121    109  4.11  2.78  18.6     1     1     4     2</code></pre>
+<p>选取变量mpg和cyl</p>
+<pre class="r"><code>cardata_select&lt;-cardata%&gt;%select(mpg,cyl)
+cardata_select</code></pre>
+<pre><code>## # A tibble: 32 x 2
+##      mpg   cyl
+##    &lt;dbl&gt; &lt;dbl&gt;
+##  1  21       6
+##  2  21       6
+##  3  22.8     4
+##  4  21.4     6
+##  5  18.7     8
+##  6  18.1     6
+##  7  14.3     8
+##  8  24.4     4
+##  9  22.8     4
+## 10  19.2     6
+## # … with 22 more rows</code></pre>
+</div>
+<div id="数据展示" class="section level4">
+<h4>6.3.4 数据展示</h4>
+<p>散点图</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(cardata,aes(x=cyl,y=mpg))+geom_point()</code></pre>
+<p><img src="https://pylone-w.github.io/post/2021/08/05/learning-r/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>柱状图</p>
+<pre class="r"><code>ggplot(cardata,aes(x=cyl,y=mpg))+geom_col()</code></pre>
+<p><img src="https://pylone-w.github.io/post/2021/08/05/learning-r/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>箱式图</p>
+<pre class="r"><code>ggplot(cardata,aes(x=cyl,y=mpg))+geom_boxplot()</code></pre>
+<p><img src="https://pylone-w.github.io/post/2021/08/05/learning-r/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>小提琴图</p>
+<pre class="r"><code>ggplot(cardata,aes(x=cyl,y=mpg))+geom_violin()</code></pre>
+<p><img src="https://pylone-w.github.io/post/2021/08/05/learning-r/index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="数据分析" class="section level4">
+<h4>6.3.5 数据分析</h4>
+<pre class="r"><code>#anova
+cardata$cyl&lt;-as.factor(cardata$cyl)
+anova_fit&lt;-aov(cardata$mpg~cardata$cyl)
+summary(anova_fit)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## cardata$cyl  2  824.8   412.4    39.7 4.98e-09 ***
+## Residuals   29  301.3    10.4                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>#lm_fit
+lm_fit&lt;-lm(mpg~cyl,cardata)
+summary.aov(lm_fit)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## cyl          2  824.8   412.4    39.7 4.98e-09 ***
+## Residuals   29  301.3    10.4                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+</div>
+<div id="更进一步的分析" class="section level3">
+<h3>6.4 更进一步的分析？</h3>
+<p>多重比较、线性混合效应模型、更好看的图，网上查找教程。比如，我想做个这样的聚类图：</p>
+<p><img src="images/ggtree2.png" /></p>
+<p>网上找 <a href="https://guangchuangyu.github.io/ggtree-book/chapter-ggtree.html">教程</a></p>
+</div>
+</div>
+<div id="不断学习分享总结" class="section level2">
+<h2>7.不断学习、分享、总结</h2>
+<p><img src="images/erwei.png" /></p>
 </div>
 
 </main>
